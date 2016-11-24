@@ -1,0 +1,43 @@
+
+<ion-view view-title="THE HINDHU">
+
+
+<div class="tabs tabs-icon-left">
+  <a class="tab-item" ng-click="news1()">
+    <i class="icon ion-home"></i>
+    Top headlines
+  </a>
+  <a class="tab-item" ng-click="news2()">
+    <i class="icon ion-star"></i>
+    Latest headlines
+  </a>
+</div>
+<ion-content>
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+	<div>
+	<center><h1>{{type.sortBy}} Trending  news</h1></center>
+
+	<div class="list card" ng-repeat="news in a">
+
+  <div class="item item-avatar">
+    <img src="http://1ias.com/wp-content/uploads/2015/10/the-hindu-newpaper.png">
+    <h2 ng-click="link(news)" class="space" >{{news.title}}</h2>
+    <p>{{news.publishedAt}}</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="{{news.urlToImage}}">
+    <p  class="space" >
+      {{news.description}}
+    </p>
+
+  </div>
+
+</div>
+</div>
+</div>
+  </ion-content>
+</ion-view>
